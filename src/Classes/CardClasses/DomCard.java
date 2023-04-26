@@ -3,35 +3,35 @@ package Classes.CardClasses;
 import Classes.Player;
 
 public class DomCard {
-    private String name;
-    private int cost;
-    private int victoryPoints = 0;
-    private int treasureValue = 0;
-    private int buys = 0;
-    private String effect = "";
-    private String art = "";
-    private String type;
-    private int drawammount = 0;
-    private int additionalActions = 0;
-    private int villagers = 0;
-    private int coffers = 0;
+    private String name {public get;}
+    private int cost {public get;}
+    private int victoryPoints = 0 {public get;}
+    private int treasureValue = 0 {public get;}
+    private int buys = 0 {public get;}
+    private String effect = "" {public get;}
+    private String art = "" {public get;}
+    private String type {public get;}
+    private int drawammount = 0 {public get;}
+    private int additionalActions = 0 {public get;}
+    private int villagers = 0 {public get;}
+    private int coffers = 0 {public get;}
 
 
     // masterconstructor with optional parameters
-    public DomCard(String Name, String Type, int Cost, int VictoryPoints = 0, int TreasureValue = 0, int Draws = 0, int AddActions = 0, addBuys=0,
-            int Coffers = 0, int Villagers = 0, String Effect = "", String Art = "") {
-        this.name = name;
-        this.cost = cost;
-        this.victoryPoints = victoryPoints;
-        this.treasureValue = treasureValue;
-        this.effect = effect;
-        this.type = type;
-        this.drawammount = draws;
-        this.additionalActions = addActions;
-        this.buys= addBuys;
-        this.coffers = coffers;
-        this.villagers = villagers;
-        if art != ""{this.art = art;};
+    public DomCard(String Name, String Type, int Cost, ?int VictoryPoints = 0, ?int TreasureValue = 0, ?int Draws = 0, ?int AddActions = 0, ?int addBuys=0,
+            ?int Coffers = 0, ?int Villagers = 0, ?String Effect = "", ?String Art = "") {
+        this.name = Name;
+        this.cost = Cost;
+        this.victoryPoints = VictoryPoints;
+        this.treasureValue = TreasureValue;
+        this.effect = Effect;
+        this.type = Type;
+        this.drawammount = Draws;
+        this.additionalActions = AddActions;
+        this.buys= AddBuys;
+        this.coffers = Coffers;
+        this.villagers = Villagers;
+        if art != ""{this.art = Art;};
     }
 
     public void play(Player activPlayer) {
@@ -67,21 +67,6 @@ public class DomCard {
         return template.substring(0, start) + this.type + template.substring(end);
     }
 
-    public int getCost() {
-        return this.cost;
-    }
-
-    public int getVictoryPoints() {
-        return this.victoryPoints;
-    }
-
-    public int getTreasureValue() {
-        return this.treasureValue;
-    }
-
-    public String getEffect() {
-        return this.effect;
-    }
 
     public String getEffect_Line(int linenum) {
         String[] lines = this.effect.split("\\r?\\n");
